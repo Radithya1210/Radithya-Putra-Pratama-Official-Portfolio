@@ -2,8 +2,8 @@
 const T = {
   id: {
     "nav-home": "Beranda", "nav-about": "Tentang", "nav-skills": "Keahlian", "nav-experience": "Pengalaman", "nav-projects": "Proyek", "nav-contact": "Kontak",
-    "hero-badge": "Dev & Creator", "hero-tag": "Siswa · Developer · Creator",
-    "hero-sub": "Siswa SMPN 11 Kota Tangerang Selatan yang bersemangat membangun pengalaman digital yang berkesan — dari website hingga game.",
+    "hero-badge": "Student & Developer", "hero-tag": "Siswa · Developer",
+    "hero-sub": "Bersemangat membangun pengalaman digital yang berkesan — dari website hingga game.",
     "hero-cta1": "Lihat Proyek", "hero-cta2": "Hubungi Saya", "stat1": "Proyek", "stat2": "Tahun Coding", "stat3": "Skill", "scroll": "Scroll",
     "about-title": "Tentang Saya",
     "acard1-t": "Profil", "acard1-p": "Lahir 12 November 2010 di Tangerang. Saat ini belajar di SMPN 11 Kota Tangerang Selatan. Alumni SDN RawaBuntu 03.",
@@ -39,8 +39,8 @@ const T = {
   },
   en: {
     "nav-home": "Home", "nav-about": "About", "nav-skills": "Skills", "nav-experience": "Experience", "nav-projects": "Projects", "nav-contact": "Contact",
-    "hero-badge": "Dev & Creator", "hero-tag": "Student · Developer · Creator",
-    "hero-sub": "A student of SMPN 11 Kota Tangerang Selatan passionate about building memorable digital experiences — from websites to games.",
+    "hero-badge": "Student & Developer", "hero-tag": "Student · Developer",
+    "hero-sub": "Passionate about building memorable digital experiences — from websites to games.",
     "hero-cta1": "View Projects", "hero-cta2": "Contact Me", "stat1": "Projects", "stat2": "Years Coding", "stat3": "Skills", "scroll": "Scroll",
     "about-title": "About Me",
     "acard1-t": "Profile", "acard1-p": "Born November 12, 2010 in Tangerang. Currently studying at SMPN 11 Kota Tangerang Selatan. Alumni of SDN RawaBuntu 03.",
