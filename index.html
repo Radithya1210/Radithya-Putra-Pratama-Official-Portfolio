@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radithya Putra Pratama Official Portfolio</title>
+  <link rel="icon" type="image/png" href="./assets/img/logo.png">
+  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">R<span>.</span>P</a>
+      <div class="nav-right">
+        <button class="lang-btn" id="langBtn">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <aside class="side-menu" id="sideMenu">
+    <button class="menu-close" id="menuClose"><i class="fa-solid fa-xmark"></i></button>
+    <nav class="menu-nav">
+      <a href="#hero" class="menu-link"><span class="mn-num">01</span><span data-i18n="nav-home">Beranda</span></a>
+      <a href="#about" class="menu-link"><span class="mn-num">02</span><span data-i18n="nav-about">Tentang</span></a>
+      <a href="#skills" class="menu-link"><span class="mn-num">03</span><span data-i18n="nav-skills">Keahlian</span></a>
+      <a href="#experience" class="menu-link"><span class="mn-num">04</span><span
+          data-i18n="nav-experience">Pengalaman</span></a>
+      <a href="#webprojects" class="menu-link"><span class="mn-num">05</span><span data-i18n="nav-projects">Proyek
+          Web</span></a>
+      <a href="#gameprojects" class="menu-link"><span class="mn-num">06</span><span data-i18n="proj2-title">Proyek
+          Game</span></a>
+      <a href="#contact" class="menu-link"><span class="mn-num">07</span><span data-i18n="nav-contact">Kontak</span></a>
+    </nav>
+    <div class="menu-footer">
+      <p>Radithya Putra Pratama</p>
+      <p>© 2025</p>
+    </div>
+  </aside>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-bg">
+      <div class="bg-circle c1"></div>
+      <div class="bg-circle c2"></div>
+      <div class="bg-ring r1"></div>
+      <div class="bg-ring r2"></div>
+      <div class="bg-ring r3"></div>
+      <div class="bg-tri t1"></div>
+      <div class="bg-tri t2"></div>
+      <div class="bg-line bl1"></div>
+      <div class="bg-line bl2"></div>
+      <div class="dot-grid"></div>
+    </div>
+
+    <div class="hero-content">
+
+      <!-- FOTO KIRI -->
+      <div class="hero-photo-col reveal-left">
+        <!-- Lingkaran orbit dekoratif -->
+        <div class="orbit-wrap">
+          <div class="orbit-ring or1"></div>
+          <div class="orbit-ring or2"></div>
+          <div class="orbit-dot od1"></div>
+          <div class="orbit-dot od2"></div>
+          <div class="orbit-dot od3"></div>
+        </div>
+        <!-- Foto portrait -->
+        <div class="photo-portrait">
+          <img src="./assets/img/PROFIL.png" alt="Radithya Putra Pratama" class="photo-img" />
+          <div class="photo-fade"></div>
+        </div>
+        <div class="hero-badge"><span data-i18n="hero-badge">Student &amp; Dev</span></div>
+      </div>
+
+      <!-- TEKS KANAN -->
+      <div class="hero-text reveal-right">
+        <div class="hero-tag"><i class="fa-solid fa-circle-dot"></i> <span data-i18n="hero-tag">Siswa · Developer</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="hn">Radithya</span>
+          <span class="hn outline">Putra Pratama</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero-sub">Bersemangat membangun pengalaman digital yang berkesan — dari website
+          hingga game.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> <span
+              data-i18n="hero-cta1">Lihat Proyek</span></a>
+          <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> <span
+              data-i18n="hero-cta2">Hubungi Saya</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num" data-count="3">0</span><span class="sp">+</span><span
+              class="stat-label" data-i18n="stat1">Proyek</span></div>
+          <div class="stat-sep"></div>
+          <div class="stat-item"><span class="stat-num" data-count="3">0</span><span class="sp">+</span><span
+              class="stat-label" data-i18n="stat2">Tahun Coding</span></div>
+          <div class="stat-sep"></div>
+          <div class="stat-item"><span class="stat-num" data-count="6">0</span><span class="stat-label"
+              data-i18n="stat3">Skill</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-ind">
+      <div class="scroll-bar"></div>
+      <span data-i18n="scroll">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title" data-i18n="about-title">Tentang Saya</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="about-cards reveal-up">
+        <div class="acard">
+          <div class="acard-ico"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3 data-i18n="acard1-t">Profil</h3>
+          <p data-i18n="acard1-p">Lahir 12 November 2010 di Tangerang. Saat ini belajar di SMPN 11 Kota Tangerang
+            Selatan. Alumni SDN RawaBuntu 03.</p>
+        </div>
+        <div class="acard delay-1">
+          <div class="acard-ico"><i class="fa-solid fa-code"></i></div>
+          <h3 data-i18n="acard2-t">Passion</h3>
+          <p data-i18n="acard2-p">Sangat tertarik dalam dunia web development, game development dan cyber security.
+            Selalu ingin belajar
+            teknologi baru.</p>
+        </div>
+        <div class="acard delay-2">
+          <div class="acard-ico"><i class="fa-solid fa-trophy"></i></div>
+          <h3 data-i18n="acard3-t">Pencapaian</h3>
+          <p data-i18n="acard3-p">Menyelesaikan tugas akhir SMP berupa game berbasis web dengan mekanisme RNG yang
+            membuktikan kemampuan teknis sejak dini.</p>
+        </div>
+      </div>
+      <div class="about-desc reveal-up">
+        <div class="desc-deco">
+          <div class="dd s1"></div>
+          <div class="dd s2"></div>
+          <div class="dd s3"></div>
+        </div>
+        <div class="desc-body">
+          <h3>Halo, Saya Radithya 👋</h3>
+
+          <p data-i18n="about-p1">
+            Perjalanan saya di dunia coding dimulai saat kelas 5 SD, atau menjelang kenaikan ke kelas 6.
+            Saat itu saya sedang sangat suka bermain game, terutama game bergenre simulator buatan developer lokal
+            Andy Lukito (Akhir Pekan Studio). Dari situ muncul ketertarikan baru:
+            <em>saya tidak ingin hanya menjadi penikmat game, tetapi juga ingin menjadi pembuatnya.</em>
+            Saya juga terinspirasi dari beliau untuk mulai terjun ke dunia development.
+          </p>
+
+          <p data-i18n="about-p2">
+            Namun, saat itu saya belum memiliki laptop, yang cukup menghambat untuk belajar game development.
+            Akhirnya saya mencoba beralih ke web development. Awalnya hanya iseng menggunakan template HTML, CSS,
+            dan JavaScript untuk membuat kartu ucapan dan proyek sederhana lainnya.
+            Dari situ, minat saya mulai berkembang dengan cukup pesat.
+          </p>
+
+          <p data-i18n="about-p3">
+            Proyek pertama saya adalah membuat website tentang batik Neo Tangsel dalam kegiatan P5 (Proyek Penguatan
+            Profil Pelajar Pancasila) saat kelas 7 SMP.
+            Dari proyek ini, saya mulai memahami dasar-dasar pembuatan website secara lebih serius.
+          </p>
+
+          <p data-i18n="about-p4">
+            Selanjutnya, saya membuat proyek kedua berupa website top up game dan voucher bernama
+            <strong>GARUDANEXTERA</strong>, yang saya mulai pada awal kelas 8 SMP.
+            Menariknya, saya mengerjakannya hanya menggunakan HP dan platform Replit.
+            Setelah saya memiliki laptop, proyek tersebut saya lanjutkan.
+          </p>
+
+          <p data-i18n="about-p5">
+            Sayangnya, pada awal kelas 9 SMP, proyek GARUDANEXTERA mengalami kegagalan.
+            Saya kehilangan seluruh database MySQL, dan banyak error pada bagian PHP.
+            Hingga saat ini, saya belum memiliki niat untuk memperbaikinya...
+            tetapi mungkin suatu saat nanti akan saya bangun kembali dengan versi yang lebih baik. 🙂
+          </p>
+
+          <p data-i18n="about-p6">
+            Proyek ketiga saya adalah tugas akhir SMP pada mata pelajaran Informatika,
+            yaitu membuat game berbasis web menggunakan konsep RNG (Random Number Generator),
+            dengan mengadaptasi permainan kartu UNO.
+            Dari proyek ini, saya belajar tentang logika game, sistem random, dan interaksi user dalam aplikasi berbasis
+            web.
+          </p>
+
+          <p data-i18n="about-p7">
+            Selain itu, saya juga memiliki ketertarikan di bidang cyber security.
+            Namun, untuk saat ini saya memilih untuk lebih fokus terlebih dahulu pada web development dan game
+            development
+            sebagai fondasi utama kemampuan saya.
+          </p>
+
+          <p data-i18n="about-p8">
+            Saya memiliki mimpi untuk dapat bekerja di lembaga-lembaga besar,
+            seperti NASA, dan berkontribusi dalam pengembangan teknologi yang berdampak luas,
+            baik di bidang software, sistem, maupun inovasi digital lainnya.
+          </p>
+
+          <p data-i18n="about-p9">
+            Saat ini, saya terus belajar dan mengembangkan kemampuan di bidang HTML, CSS, JavaScript,
+            serta mulai mendalami C# untuk game development.
+            Saya memiliki tujuan untuk suatu saat dapat menciptakan karya yang tidak hanya menarik,
+            tetapi juga memiliki dampak nyata.
+          </p>
+
+          <div class="about-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>C#</span>
+            <span>Unity</span>
+            <span>Web Dev</span>
+            <span>Game Dev</span>
+            <span>Cyber Security</span>
+            <span>Visual Studio Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SKILLS ======= -->
+  <section class="section skills-sec" id="skills">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title" data-i18n="skills-title">Keahlian</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal-left">
+          <div class="sk-header">
+            <div class="sk-ico si-html"><i class="fa-brands fa-html5"></i></div>
+            <div class="sk-meta">
+              <h4>HTML</h4><small data-i18n="sk-proficient">Mahir</small>
+            </div>
+            <span class="sk-pct">70%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="70"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-right delay-1">
+          <div class="sk-header">
+            <div class="sk-ico si-css"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="sk-meta">
+              <h4>CSS</h4><small data-i18n="sk-proficient">Mahir</small>
+            </div>
+            <span class="sk-pct">70%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="70"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-left delay-2">
+          <div class="sk-header">
+            <div class="sk-ico si-js"><i class="fa-brands fa-js"></i></div>
+            <div class="sk-meta">
+              <h4>JavaScript</h4><small data-i18n="sk-learning">Sedang Belajar</small>
+            </div>
+            <span class="sk-pct">45%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="45"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-right delay-3">
+          <div class="sk-header">
+            <div class="sk-ico si-cs"><i class="fa-solid fa-copyright"></i></div>
+            <div class="sk-meta">
+              <h4>C#</h4><small data-i18n="sk-learning">Sedang Belajar</small>
+            </div>
+            <span class="sk-pct">40%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="40"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-left delay-4">
+          <div class="sk-header">
+            <div class="sk-ico si-vscode"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"
+                style="width:24px;height:24px" /></div>
+            <div class="sk-meta">
+              <h4>VS Code</h4><small data-i18n="sk-proficient">Mahir</small>
+            </div>
+            <span class="sk-pct">90%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="90"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-right delay-5">
+          <div class="sk-header">
+            <div class="sk-ico si-unity"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity"
+                style="width:24px;height:24px;filter:invert(1)" /></div>
+            <div class="sk-meta">
+              <h4>Unity Engine</h4><small data-i18n="sk-proficient">Mahir</small>
+            </div>
+            <span class="sk-pct">75%</span>
+          </div>
+          <div class="sk-track">
+            <div class="sk-fill" data-pct="75"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hex-row reveal-up">
+        <div class="hex hx-on"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+        <div class="hex hx-on"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+        <div class="hex hx-mid"><i class="fa-brands fa-js"></i><span>JS</span></div>
+        <div class="hex hx-mid"><i class="fa-solid fa-copyright"></i><span>C#</span></div>
+        <div class="hex hx-off"><i class="fa-solid fa-gamepad"></i><span>Game Dev</span></div>
+        <div class="hex hx-off"><i class="fa-solid fa-globe"></i><span>Web Dev</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= EXPERIENCE ======= -->
+  <section class="section exp-sec" id="experience">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title" data-i18n="exp-title">Pengalaman</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- UNO -->
+        <div class="tl-item reveal-left">
+          <div class="tl-dot tl-star"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card tl-feat">
+            <div class="feat-badge"><i class="fa-solid fa-star"></i></div>
+            <span class="tl-yr">2026</span>
+            <h3 data-i18n="exp5-t">Game UNO Berbasis Web (RNG)</h3>
+            <p data-i18n="exp5-p">
+              Mengembangkan game berbasis web menggunakan sistem RNG sebagai tugas akhir Informatika,
+              serta mempelajari logika game dan interaksi user.
+            </p>
+            <div class="tl-tags"><span>JavaScript</span><span>Game Dev</span><span>RNG</span><span>Project</span></div>
+          </div>
+        </div>
+
+        <!-- GARUDANEXTERA -->
+        <div class="tl-item reveal-right delay-1">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card">
+            <div class="feat-badge"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <span class="tl-yr">2024 - 2025</span>
+            <h3 data-i18n="exp4-t">GARUDANEXTERA</h3>
+            <p data-i18n="exp4-p">
+              Website top up game yang dikembangkan menggunakan HP dan Replit, kemudian dilanjutkan di laptop.
+              Mengalami kegagalan karena kehilangan database, namun menjadi pengalaman penting dalam pengelolaan
+              backend.
+            </p>
+            <div class="tl-tags"><span>Web Dev</span><span>MySQL</span><span>Replit</span><span>Project</span></div>
+          </div>
+        </div>
+
+        <!-- BATIK P5 -->
+        <div class="tl-item reveal-left delay-2">
+          <div class="tl-dot tl-star"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card tl-feat">
+            <div class="feat-badge"><i class="fa-solid fa-star"></i></div>
+            <span class="tl-yr">2023</span>
+            <h3 data-i18n="exp3-t">Project P5 — Batik Neo Tangsel</h3>
+            <p data-i18n="exp3-p">
+              Mengembangkan website dalam kegiatan P5 sebagai proyek pertama dalam memahami
+              dasar pembuatan website secara lebih serius.
+            </p>
+            <div class="tl-tags"><span>HTML</span><span>CSS</span><span>Project</span></div>
+          </div>
+        </div>
+
+        <!-- SMP -->
+        <div class="tl-item reveal-right delay-3">
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-card">
+            <span class="tl-yr">2023 – Sekarang</span>
+            <h3 data-i18n="exp2-t">Siswa SMPN 11 Kota Tangerang Selatan</h3>
+            <p data-i18n="exp2-p">
+              Menempuh pendidikan sambil aktif mengembangkan keterampilan di bidang teknologi,
+              khususnya web development dan game development.
+            </p>
+            <div class="tl-tags"><span>Pendidikan</span><span>Teknologi</span></div>
+          </div>
+        </div>
+
+        <!-- PALING LAMA (SD) -->
+        <div class="tl-item reveal-left delay-4">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-yr">2017 – 2023</span>
+            <h3 data-i18n="exp1-t">Alumni SDN RawaBuntu 03</h3>
+            <p data-i18n="exp1-p">
+              Menyelesaikan pendidikan dasar sebagai fondasi awal perjalanan akademik.
+            </p>
+            <div class="tl-tags"><span>Pendidikan</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= WEB PROJECTS ======= -->
+  <section class="section proj-sec" id="webprojects">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">05</span>
+        <h2 class="sec-title" data-i18n="proj1-title">Proyek Web</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="proj-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="proj-card proj-feat reveal-up">
+          <div class="proj-ribbon" data-i18n="proj-feat3">⭐ Portofolio</div>
+
+          <div class="proj-vis">
+            <img src="./assets/img/TANDATANYA.png" alt="UNO Web Game" class="proj-img">
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Portfolio</span>
+            </div>
+
+            <h3 data-i18n="proj3-t">Portofolio</h3>
+
+            <p data-i18n="proj3-p">
+              Website portofolio pribadi yang menampilkan berbagai proyek dan pengalaman di bidang web development dan
+              game development.
+              Dibangun dengan desain modern, animasi interaktif, serta fitur multi-bahasa untuk memberikan pengalaman
+              pengguna yang menarik.
+            </p>
+
+            <div class="proj-foot">
+              <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn-gh">GitHub</span>
+              </a>
+              <span class="proj-type"><i class="fa-solid fa-id-card"></i> Web Portofolio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="proj-card proj-feat reveal-up">
+          <div class="proj-ribbon" data-i18n="proj-feat">⭐ Tugas Akhir</div>
+
+          <div class="proj-vis">
+            <img src="./assets/img/UNO-GAMES.png" alt="UNO Web Game" class="proj-img">
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>RNG</span><span>UNO</span>
+            </div>
+
+            <h3 data-i18n="proj1-t">Web RNG Game — Tugas Akhir SMP</h3>
+
+            <p data-i18n="proj1-p">
+              Game berbasis web, yaitu game UNO, dengan mekanisme Random Number Generator yang
+              dibuat sebagai tugas akhir di SMPN 11 Kota Tangerang Selatan. Menampilkan gameplay
+              yang menantang dan desain antarmuka yang interaktif.
+            </p>
+
+            <div class="proj-foot">
+              <a href="https://radithya1210.github.io/UNO-CLASSIC/" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> <span data-i18n="btn-gh">GitHub</span>
+              </a>
+              <span class="proj-type"><i class="fa-solid fa-gamepad"></i> Web Game</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= GAME PROJECTS ======= -->
+  <section class="section proj-sec" id="gameprojects">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">06</span>
+        <h2 class="sec-title" data-i18n="proj2-title">Proyek Game</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="proj-grid">
+
+        <!-- PROJECT 1 (GAME) -->
+        <div class="proj-card proj-feat reveal-up">
+          <div class="proj-ribbon" data-i18n="proj-feat2">🎮 Simulator</div>
+
+          <div class="proj-vis">
+            <img src="./assets/img/TANDATANYA.png" alt="Simulation Game" class="proj-img">
+          </div>
+
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>Unity</span><span>C#</span><span>3D Modelling</span><span>Simulation</span>
+            </div>
+
+            <h3 class="proj-title">
+              <span data-i18n="proj2-t">Game Simulator (Segera Hadir)</span>
+
+              <span class="countdown-inline">
+                <span class="countdown-label-inline" data-i18n="countdown-label">Release time</span>
+                <span id="countdown">00:00:00:00</span>
+                <span id="release-date-text" class="countdown-date-inline"></span>
+              </span>
+            </h3>
+
+            <p data-i18n="proj2-p">
+              Game bergenre simulation yang dikembangkan menggunakan Unity dan C#, dengan fokus pada pengalaman gameplay
+              yang realistis dan interaktif. Menggabungkan elemen 3D modelling serta sistem gameplay untuk menciptakan
+              pengalaman bermain yang imersif.
+            </p>
+
+            <div class="proj-foot">
+              <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-steam"></i> Steam
+              </a>
+              <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-google-play"></i> PlayStore
+              </a>
+              <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-app-store"></i> App Store
+              </a>
+
+              <span class="proj-type">
+                <i class="fa-solid fa-gamepad"></i> Game
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section class="section contact-sec" id="contact">
+    <div class="container">
+      <div class="sec-head reveal-up">
+        <span class="sec-num">07</span>
+        <h2 class="sec-title" data-i18n="contact-title">Kontak</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3 data-i18n="contact-sub">Mari Terhubung!</h3>
+          <p data-i18n="contact-desc">Punya pertanyaan, ide kolaborasi, atau sekadar ingin menyapa? Jangan ragu untuk
+            menghubungi saya!</p>
+          <div class="ci-list">
+            <div class="ci-item">
+              <div class="ci-ico"><i class="fa-solid fa-location-dot"></i></div>
+              <div><span class="ci-l" data-i18n="ci-loc">Lokasi</span><span class="ci-v">Tangerang Selatan,
+                  Banten</span></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ico"><i class="fa-solid fa-school"></i></div>
+              <div><span class="ci-l" data-i18n="ci-school">Sekolah</span><span class="ci-v">SMPN 11 Kota Tangerang
+                  Selatan</span></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ico"><i class="fa-brands fa-github"></i></div>
+              <div><span class="ci-l">GitHub</span><a href="https://github.com/Radithya1210" target="_blank"
+                  class="ci-v ci-link">github.com/Radithya1210</a></div>
+            </div>
+          </div>
+          <div class="ci-socials">
+            <a href="https://github.com/Radithya1210" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/raddyypp?igsh=MTR1Mm5haHNkdHZpcw==" target="_blank"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.threads.com/@raddyypp" target="_blank"><i class="fa-brands fa-threads"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="cform" id="contactForm" onsubmit="handleForm(event)">
+            <div class="fg"><label data-i18n="form-name">Nama</label><input type="text" placeholder="John Doe"
+                required /></div>
+            <div class="fg"><label data-i18n="form-email">Email</label><input type="email"
+                placeholder="email@example.com" required /></div>
+            <div class="fg"><label data-i18n="form-msg">Pesan</label><textarea rows="4" placeholder="Halo Radithya..."
+                required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> <span
+                data-i18n="form-send">Kirim Pesan</span></button>
+          </form>
+          <div class="form-ok hidden" id="formOk"><i class="fa-solid fa-circle-check"></i>
+            <p data-i18n="form-ok">Pesan berhasil dikirim! Terima kasih 🎉</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="fg-col fg-logo">
+          <div class="f-logo">R<span>.</span>P</div>
+          <p data-i18n="f-tagline">Developer muda dari Tangerang Selatan yang berambisi membangun masa depan digital.
+          </p>
+          <div class="f-deco">
+            <div class="fd1"></div>
+            <div class="fd2"></div>
+          </div>
+        </div>
+        <div class="fg-col">
+          <h4 data-i18n="f-social">Media Sosial</h4>
+          <a href="https://github.com/Radithya1210" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.instagram.com/raddyypp?igsh=MTR1Mm5haHNkdHZpcw=="><i class="fa-brands fa-instagram"></i>
+            Instagram</a>
+          <a href="https://www.threads.com/@raddyypp"><i class="fa-brands fa-threads"></i> Threads</a>
+          <h4 style="margin-top:1.4rem" data-i18n="f-links">Navigasi</h4>
+          <a href="#projects" data-i18n="nav-projects">Proyek</a>
+          <a href="#skills" data-i18n="nav-skills">Keahlian</a>
+          <a href="#experience" data-i18n="nav-experience">Pengalaman</a>
+        </div>
+        <div class="fg-col fg-contact">
+          <h4 data-i18n="f-contact">Kontak</h4>
+          <div class="fc-item"><i class="fa-solid fa-location-dot"></i> Tangerang Selatan, Banten</div>
+          <div class="fc-item"><i class="fa-solid fa-school"></i> SMPN 11 Kota Tangerang Selatan</div>
+          <div class="fc-item"><i class="fa-solid fa-graduation-cap"></i> Alumni SDN RawaBuntu 03</div>
+          <div class="fc-item"><i class="fa-brands fa-github"></i> github.com/Radithya1210</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <strong>Radithya Putra Pratama</strong>. <span data-i18n="f-copy">Semua hak dilindungi.</span></p>
+      <p data-i18n="f-made">Dibuat dengan <i class="fa-solid fa-heart" style="color:#e74c3c"></i> dan semangat belajar
+      </p>
+    </div>
+  </footer>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/countdown/gameprojects-countdown.js"></script>
+</body>
+
+</html>
