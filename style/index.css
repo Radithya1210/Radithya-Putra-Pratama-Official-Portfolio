@@ -1298,13 +1298,22 @@ button {
 
 .proj-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  padding-bottom: .5rem
+}
+
+.proj-grid>* {
+  scroll-snap-align: start
 }
 
 .proj-feat {
-  grid-column: 1/-1;
-  flex-direction: row !important
+  grid-column: auto;
+  flex-direction: column !important;
+  min-width: 280px
 }
 
 .proj-card {
@@ -1324,50 +1333,80 @@ button {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .5)
 }
 
-/* biar h3 jadi flex */
+/* biar judul + countdown tetap stabil di semua device */
 .proj-title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1rem 1.5rem;
   flex-wrap: wrap;
 }
 
-/* container countdown */
 .countdown-inline {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 190px;
+  margin-left: 0;
+  text-align: left;
   font-size: 0.75rem;
 }
 
-@media (max-width: 600px) {
+.countdown-label-inline {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.countdown-inline #countdown {
+  display: block;
+  min-width: 100%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-date-inline {
+  color: var(--w3);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
   .proj-title {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .countdown-inline {
+    width: 100%;
+    min-width: 0;
     align-items: flex-start;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .countdown-inline #countdown,
+  .countdown-date-inline {
+    white-space: normal;
   }
 }
 
-/* label atas */
-.countdown-label-inline {
-  font-weight: 700;
-  font-size: 0.75rem;
-}
+@media (max-width: 420px) {
+  .countdown-inline #countdown {
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+  }
 
-/* angka */
-.countdown-inline #countdown {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-/* tanggal bawah */
-.countdown-date-inline {
-  color: var(--w3);
+  .countdown-label-inline,
+  .countdown-date-inline {
+    font-size: 0.72rem;
+  }
 }
 
 .proj-ribbon {
@@ -1411,8 +1450,8 @@ button {
 }
 
 .proj-feat .proj-vis {
-  width: 280px;
-  min-height: 100%
+  width: 100%;
+  min-height: 180px
 }
 
 .pv-shape {
@@ -1490,20 +1529,56 @@ button {
 
 .proj-foot {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   margin-top: auto;
   padding-top: .5rem;
-  flex-wrap: wrap;
-  gap: .5rem
+  flex-wrap: nowrap;
+  gap: .75rem
+}
+
+.proj-foot .btn {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
 }
 
 .proj-type {
+  width: 100%;
   font-size: .78rem;
   color: var(--w3);
   display: flex;
   align-items: center;
-  gap: .4rem
+  gap: .4rem;
+  margin-left: 0;
+  justify-content: flex-start
+}
+
+@media (max-width: 768px) {
+  .proj-foot {
+    align-items: stretch;
+  }
+
+  .proj-foot .btn {
+    flex: 1 1 calc(50% - 0.75rem);
+    justify-content: center;
+    min-width: 140px;
+  }
+
+  .proj-type {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .proj-foot .btn {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 /* ===== CONTACT ===== */
@@ -1885,7 +1960,9 @@ button {
 /* ===== RESPONSIVE ===== */
 @media(max-width:900px) {
   .proj-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 1rem;
+    padding-inline: .5rem
   }
 
   .proj-feat {
@@ -1912,6 +1989,11 @@ button {
 }
 
 @media(max-width:680px) {
+  .proj-grid {
+    gap: 1.25rem;
+    padding-inline: .75rem
+  }
+
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;

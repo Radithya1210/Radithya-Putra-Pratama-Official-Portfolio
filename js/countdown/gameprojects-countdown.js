@@ -1,42 +1,64 @@
-const releaseDateObj = new Date("2026-03-11T00:00:00");
-const releaseTimestamp = releaseDateObj.getTime();
+const releaseConfig = {
+    year: 2030,
+    month: 3,
+    day: 14,
+    hour: 0,
+    minute: 0,
+    second: 0
+};
+
+const releaseDateObj = new Date(
+    releaseConfig.year,
+    releaseConfig.month - 1,
+    releaseConfig.day,
+    releaseConfig.hour,
+    releaseConfig.minute,
+    releaseConfig.second
+);
 
 function formatDate(date, l) {
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const locale = l === 'id' ? 'id-ID' : 'en-US';
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const locale = l === "id" ? "id-ID" : "en-US";
     return date.toLocaleDateString(locale, options);
+}
+
+function formatCountdown(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    return [
+        String(days).padStart(2, "0"),
+        String(hours).padStart(2, "0"),
+        String(minutes).padStart(2, "0"),
+        String(seconds).padStart(2, "0")
+    ].join(":");
 }
 
 function updateCountdown() {
     const countdownEl = document.getElementById("countdown");
     const releaseDateEl = document.getElementById("release-date-text");
 
-    // Jika elemen tidak ditemukan (misal karena terhapus translasi), hentikan eksekusi
     if (!countdownEl || !releaseDateEl) return;
 
-    const now = new Date().getTime();
-    const distance = releaseTimestamp - now;
+    const now = new Date();
+    const distance = releaseDateObj.getTime() - now.getTime();
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const currentLang = typeof lang !== "undefined" ? lang : "id";
+    const translation = typeof T !== "undefined" && T[currentLang] ? T[currentLang] : {};
+    const prefix = translation["release-prefix"] || "";
+    const passedText = translation["release-passed"] || "Release date has passed";
 
-    countdownEl.innerHTML =
-        String(days).padStart(2, "0") + ":" +
-        String(hours).padStart(2, "0") + ":" +
-        String(minutes).padStart(2, "0") + ":" +
-        String(seconds).padStart(2, "0");
-
-    // Ambil bahasa saat ini dari variabel global di index.js
-    const currentLang = typeof lang !== 'undefined' ? lang : 'id';
-    const prefix = T[currentLang]["release-prefix"] || "";
-
-    releaseDateEl.innerText = prefix + formatDate(releaseDateObj, currentLang);
-
-    if (distance < 0) {
-        countdownEl.innerHTML = "00:00:00:00";
+    if (distance <= 0) {
+        countdownEl.textContent = "00:00:00:00";
+        releaseDateEl.textContent = passedText;
+        return;
     }
+
+    countdownEl.textContent = formatCountdown(distance);
+    releaseDateEl.textContent = prefix + formatDate(releaseDateObj, currentLang);
 }
 
 setInterval(updateCountdown, 1000);
